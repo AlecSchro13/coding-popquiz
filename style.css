@@ -15,7 +15,9 @@ h1 {
     color: black;
     display: inline-block;
     border-radius: 4px;
-    margin: 10px;  
+    margin: 10px;
+    border-style: none;
+    border-color: navy;  
 }
 
 .startBtn:active {      
