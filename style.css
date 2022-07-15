@@ -12,10 +12,13 @@ h1 {
 
 .startBtn {
     text-align: center;    
-    color: white;   
+    color: black;
+    display: inline-block;
+    border-radius: 4px;
+    margin: 10px;  
 }
 
-.startBtn:hover {      
+.startBtn:active {      
     background-color: navy;      
     color: white;
 }
