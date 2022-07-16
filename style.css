@@ -49,6 +49,10 @@ h1 {
     color: white;
 }
 
+.timer {
+    text-align: right;
+}
+
 .questions {
     display: inline-block;
 }
