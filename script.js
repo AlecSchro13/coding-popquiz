@@ -8,66 +8,66 @@ let startTimer = document.querySelector(".timer");
 const codeQuestions = [
   {
       question: "What is a string?",
-      answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
-      },
+      answers: [
+        "Douglas Crockford",
+        "Sheryl Sandberg",
+        "Brendan Eich"
+      ],
       correctAnswer: "c"
     },
     {
       question: "What is an element in coding?",
-      answers: {
-        a: "Water",
-        b: "Fire",
-        c: "Brendan Eich"
-      },
+      answers: [
+        "Water",
+        "Fire",
+        "Brendan Eich"
+      ],
       correctAnswer: "a"
     },
     {
       question: "What does CSS stand for?",
-      answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
-      },
+      answers: [
+        "Douglas Crockford",
+        "Sheryl Sandberg",
+        "Brendan Eich"
+      ],
       correctAnswer: "b"
     },
     {
       question: "Who invented JavaScript?",
-      answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
-      },
+      answers: [
+        "Douglas Crockford",
+        "Sheryl Sandberg",
+        "Brendan Eich"
+      ],
       correctAnswer: "c"
     },
     {
       question: "Who invented JavaScript?",
-      answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
-      },
+      answers: [
+         "Douglas Crockford",
+         "Sheryl Sandberg",
+         "Brendan Eich"
+      ],
       correctAnswer: "c"
     },
     {
       question: "Who invented JavaScript?",
-      answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
-      },
+      answers: [
+         "Douglas Crockford",
+         "Sheryl Sandberg",
+         "Brendan Eich"
+      ],
       correctAnswer: "c"
     },
     {
       question: "Who invented JavaScript?",
-      answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
-      },
-      correctAnswer: "c"
+      answers: [
+         "Douglas Crockford",
+         "Sheryl Sandberg",
+         "Brendan Eich"
+      ],
+      correctAnswer: "Brendan Eich"
     },
 ]
 
@@ -92,10 +92,13 @@ function setTime() {
 
 function displayQuestion() {
   let showQuestions = document.querySelector("#showQuestion");
+  let showAnswers = document.querySelector("#showAnswer")
   showQuestions.textContent = codeQuestions[0].question;
-  for (let index = 0; index < array.length; index++) {
-    const element = array[index];
+  showAnswers.textContent = codeQuestions[0].answers;
+  
+  for (let index = 0; index < 3; index++) {
     
+    //console.log(codeQuestions[0].answers[index]);
   }
 }
 
