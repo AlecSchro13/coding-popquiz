@@ -5,6 +5,11 @@ let secondsLeft = 120;
 
 let startTimer = document.querySelector(".timer");
 
+let showAnswers = document.querySelector("#showAnswer")
+
+let currentQuestion = 0
+
+
 const codeQuestions = [
   {
       question: "What is a string?",
@@ -77,7 +82,7 @@ function setTime() {
   var timerInterval = setInterval(function() {
     
     secondsLeft--;
-    startTimer.textContent = secondsLeft + " seconds left till colorsplosion.";
+    startTimer.textContent = secondsLeft;
     if(secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
@@ -92,24 +97,56 @@ function setTime() {
 
 function displayQuestion() {
   let showQuestions = document.querySelector("#showQuestion");
-  let showAnswers = document.querySelector("#showAnswer")
-  showQuestions.textContent = codeQuestions[0].question;
-  showAnswers.textContent = codeQuestions[0].answers;
+
+  if (currentQuestion > codeQuestions.length-1) {
+
+  } else {
   
+  showQuestions.textContent = codeQuestions[currentQuestion].question;
+
+  showAnswers.innerHTML = "";
+
   for (let index = 0; index < 3; index++) {
-    
-    //console.log(codeQuestions[0].answers[index]);
+  
+  let answerChoice = document.createElement("li");
+
+
+  answerChoice.textContent = codeQuestions[currentQuestion].answers[index];
+
+  showAnswers.append(answerChoice);
   }
 }
-
-
-
+}
 
 function startQuiz() {
-    console.log("Hi Hello");
     setTime();
     displayQuestion();
   }
+
+showAnswers.addEventListener("click", function(event) {
+  console.log(event.target.textContent);
+  if (
+    event.target.textContent === codeQuestions[currentQuestion].correctAnswer
+  ) {
+    currentQuestion++;
+    
+    displayQuestion();
+    
+  } else { secondsLeft = secondsLeft - 10;
+    currentQuestion++;
+    displayQuestion();
   
+  }
+});
+
+function endGame() {
+  let scoreEl = document.querySelector("your-score")
+  
+  let score = secondsLeft;
+
+  scoreEl.textContent = score;
+
+  showAnswers.innerHTML = "";
+}
 
 startBtn.addEventListener("click", startQuiz);
