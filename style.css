@@ -10,20 +10,54 @@ h1 {
     background-color: antiquewhite;
 }
 
+#btn {
+    text-align: center;
+}
+
 .startBtn {
     text-align: center;    
     color: black;
+    background-color: aliceblue;
     display: inline-block;
     border-radius: 4px;
     margin: 10px;
     border-style: none;
-    border-color: navy;  
+    border-color: navy;
+    cursor: pointer; 
 }
 
 .startBtn:active {      
     background-color: navy;      
     color: white;
+
 }
 
+.reset {
+    text-align: center;    
+    color: black;
+    background-color: aliceblue;
+    display: inline-block;
+    border-radius: 4px;
+    margin: 10px;
+    border-style: none;
+    border-color: navy;
+    cursor: pointer; 
+}
+
+.reset:active {
+    background-color: navy;      
+    color: white;
+}
+
+.questions {
+    display: inline-block;
+}
+
+footer {
+    display: block;
+    text-align: center;
+    font-weight: 900;
+    color: navy;
+}
 
 
