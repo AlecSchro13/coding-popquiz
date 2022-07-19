@@ -1,15 +1,16 @@
 //pop quiz
 const startBtn = document.querySelector(".startBtn");
+const resetBtn = document.querySelector(".reset");
 //start displaying questions with questions class
-let secondsLeft = 120;
-
+let secondsLeft = 100;
+//100 seconds for the timer -10 seconds
 let startTimer = document.querySelector(".timer");
 
 let showAnswers = document.querySelector("#showAnswer")
 
 let currentQuestion = 0
 
-
+//questions for the pop quiz.
 const codeQuestions = [
   {
       question: "What is a string?",
@@ -32,20 +33,20 @@ const codeQuestions = [
     {
       question: "What does CSS stand for?",
       answers: [
-        "Douglas Crockford",
-        "Sheryl Sandberg",
-        "Brendan Eich"
+        "Cool Sandy Shores",
+        "Cascading Style Sheets",
+        "Consumer Seasonal Sale"
       ],
-      correctAnswer: "b"
+      correctAnswer: "Cascading Style Sheets"
     },
     {
-      question: "Who invented JavaScript?",
+      question: "What is an element typically found in the <head> element?",
       answers: [
-        "Douglas Crockford",
-        "Sheryl Sandberg",
-        "Brendan Eich"
+        "Footer",
+        "Main",
+        "Title"
       ],
-      correctAnswer: "c"
+      correctAnswer: "Title"
     },
     {
       question: "Who invented JavaScript?",
