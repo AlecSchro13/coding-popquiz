@@ -1,68 +1,81 @@
 body {
     margin: 0%;
-    background-color: antiquewhite;
+    background-color: slategray;
+}
+
+header {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2px;
+    background-color: slateblue;
+
 }
 
 h1 {
+    display: block;
     text-align: center;
     font-weight: bolder;
-    color: navy;
-    background-color: antiquewhite;
+    color: white;
 }
 
 #btn {
     text-align: center;
+    margin: 25px;
+    padding: 20px;
 }
 
-.startBtn {
+ button {
     text-align: center;    
-    color: black;
-    background-color: aliceblue;
-    display: inline-block;
-    border-radius: 4px;
-    margin: 10px;
-    border-style: none;
+    color: white;
+    background-color: navy;
+    margin: 24px;
+    padding: 10px;
     border-color: navy;
     cursor: pointer; 
 }
 
 .startBtn:active {      
-    background-color: navy;      
+    background-color: maroon;      
     color: white;
-
-}
-
-.reset {
-    text-align: center;    
-    color: black;
-    background-color: aliceblue;
-    display: inline-block;
-    border-radius: 4px;
-    margin: 10px;
-    border-style: none;
-    border-color: navy;
-    cursor: pointer; 
 }
 
 .reset:active {
-    background-color: navy;      
+    background-color: maroon;      
     color: white;
 }
 
 .timer {
-    text-align: right;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin: 20px;
 }
 
-.questions {
-    display: inline-block;
+#showQuestions {
+    align-content: center;
+    color: navy;
+    margin: 20px;
+    padding: 10px;
+}
+
+#showAnswer {
+    list-style: none;
+}
+
+ol {
+    text-align: center;
 }
 
 footer {
-    display: block;
+    margin: 0 auto;
+    padding: 5px;
     text-align: center;
-    font-weight: 900;
-    color: navy;
-    padding: 20px;
 }
 
-
+h2 {
+    text-align: center;
+    display: block;
+    margin: 5px;
+    padding: 3px;
+    color: black;
+}

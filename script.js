@@ -10,25 +10,27 @@ let showAnswers = document.querySelector("#showAnswer")
 
 let currentQuestion = 0
 
+let showQuestions = document.querySelector("#showQuestion");
+
 //questions for the pop quiz.
 const codeQuestions = [
   {
-      question: "What is a string?",
+      question: "What is a string in coding?",
       answers: [
-        "Douglas Crockford",
-        "Sheryl Sandberg",
-        "Brendan Eich"
+        "A piece of cloth",
+        "Lint",
+        "Used for data values that are made up of an ordered sequence of characters"
       ],
-      correctAnswer: "c"
+      correctAnswer: "Used for data values that are made up of an ordered sequence of characters"
     },
     {
       question: "What is an element in coding?",
       answers: [
         "Water",
         "Fire",
-        "Brendan Eich"
+        "Body",
       ],
-      correctAnswer: "a"
+      correctAnswer: "Body"
     },
     {
       question: "What does CSS stand for?",
@@ -55,7 +57,7 @@ const codeQuestions = [
          "Sheryl Sandberg",
          "Brendan Eich"
       ],
-      correctAnswer: "c"
+      correctAnswer: "Brendan Eich"
     },
     {
       question: "Who invented JavaScript?",
@@ -64,7 +66,7 @@ const codeQuestions = [
          "Sheryl Sandberg",
          "Brendan Eich"
       ],
-      correctAnswer: "c"
+      correctAnswer: "Brendan Eich"
     },
     {
       question: "Who invented JavaScript?",
@@ -84,11 +86,13 @@ function setTime() {
     
     secondsLeft--;
     startTimer.textContent = secondsLeft;
-    if(secondsLeft === 0) {
+    if(secondsLeft <= 0) {
       // Stops execution of action at set interval
+      setTime.textContent = 0;
+      
       clearInterval(timerInterval);
-      // Calls function to create and append image
-      //endGame();
+      //call back to end game function
+      endGame();
     }
 
   }, 1000);
@@ -100,7 +104,14 @@ function displayQuestion() {
   let showQuestions = document.querySelector("#showQuestion");
 
   if (currentQuestion > codeQuestions.length-1) {
+  let scoreEl = document.querySelector(".your-score")
+  
+  let score = secondsLeft;
 
+  scoreEl.textContent = score;
+  secondsLeft = 0;
+  setTime();
+  endGame();
   } else {
   
   showQuestions.textContent = codeQuestions[currentQuestion].question;
@@ -109,8 +120,7 @@ function displayQuestion() {
 
   for (let index = 0; index < 3; index++) {
   
-  let answerChoice = document.createElement("li");
-
+  let answerChoice = document.createElement("button");
 
   answerChoice.textContent = codeQuestions[currentQuestion].answers[index];
 
@@ -134,20 +144,19 @@ showAnswers.addEventListener("click", function(event) {
     displayQuestion();
     
   } else { secondsLeft = secondsLeft - 10;
+    
     currentQuestion++;
+    
     displayQuestion();
   
   }
 });
 
 function endGame() {
-  let scoreEl = document.querySelector("your-score")
-  
-  let score = secondsLeft;
-
-  scoreEl.textContent = score;
 
   showAnswers.innerHTML = "";
+  
+  showQuestions.innerHTML = "";
 }
 
 startBtn.addEventListener("click", startQuiz);
