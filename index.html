@@ -10,22 +10,29 @@
     </head>
     
     <body>
-        <header class="container">
+        <div class="container">
         <h1>Welcome to the Coding Pop Quiz!</h1>
         <div id="btn">
         <button class="startBtn">Start</button>
-        <button class="reset">Reset</button>
         </div>
         <div class="timer"></div>
-        <p class="your-score"></p>
-    </header>
+       
+        </div>
 
     
     <main class="questions">
         <h2 id="showQuestion"></h2>
         <ol id="showAnswer"></ol>
-    </main>
-    <section></section>
+    </main> 
+    <p class="your-score"></p>
+    <section id="high-score" class="hide">
+        <form action="your initials"> 
+            <input type="Initials" name="Initials" id="initials" maxlength="3"> 
+            <label for="password"> Congratulations! Enter your initials here!</label> 
+            <br><input type="submit" value="Submit"> 
+        </form>
+    </section>
+    
 
     <footer>Brought to you by Alec Schroetlin🦦</footer>
     <script src="script.js"></script>

@@ -1,5 +1,12 @@
+*. *::before, *::after {
+   box-sizing: border-box;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+
 body {
     margin: 0%;
+    padding: 0%;
+    align-items: center;
     background-color: slategray;
 }
 
@@ -39,10 +46,6 @@ h1 {
     color: white;
 }
 
-.reset:active {
-    background-color: maroon;      
-    color: white;
-}
 
 .timer {
     text-align: center;
@@ -51,10 +54,8 @@ h1 {
     margin: 20px;
 }
 
-#showQuestions {
-    align-content: center;
-    color: navy;
-    margin: 20px;
+.questions {
+    text-align: center;
     padding: 10px;
 }
 
@@ -78,4 +79,12 @@ h2 {
     margin: 5px;
     padding: 3px;
     color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+.hide {
+    display: none;
 }

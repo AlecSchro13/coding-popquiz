@@ -1,6 +1,6 @@
 //pop quiz
 const startBtn = document.querySelector(".startBtn");
-const resetBtn = document.querySelector(".reset");
+
 //start displaying questions with questions class
 let secondsLeft = 100;
 //100 seconds for the timer -10 seconds
@@ -11,6 +11,17 @@ let showAnswers = document.querySelector("#showAnswer")
 let currentQuestion = 0
 
 let showQuestions = document.querySelector("#showQuestion");
+
+let showHighscore = document.querySelector("#high-score");
+
+let timerInterval;
+//just an example of if I have a form and im calling it into the Javascript "var name = document.querySelector("initials")
+let initials = name.value.trim() 
+
+let newScore = {
+  score: secondsLeft, 
+  initials: initials
+}
 
 //questions for the pop quiz.
 const codeQuestions = [
@@ -82,7 +93,7 @@ const codeQuestions = [
 
 function setTime() {
   // Sets interval in variable
-  var timerInterval = setInterval(function() {
+  timerInterval = setInterval(function() {
     
     secondsLeft--;
     startTimer.textContent = secondsLeft;
@@ -109,8 +120,7 @@ function displayQuestion() {
   let score = secondsLeft;
 
   scoreEl.textContent = score;
-  secondsLeft = 0;
-  setTime();
+  
   endGame();
   } else {
   
@@ -128,6 +138,9 @@ function displayQuestion() {
   }
 }
 }
+
+let scoreEl = document.querySelector(".your-score")
+
 
 function startQuiz() {
     setTime();
@@ -153,10 +166,19 @@ showAnswers.addEventListener("click", function(event) {
 });
 
 function endGame() {
+  startTimer.setAttribute("class", "hidden");
+
+  startBtn.setAttribute("class", "hidden");
+
+  showHighscore.removeAttribute("class");
+
+  clearInterval(timerInterval);
 
   showAnswers.innerHTML = "";
   
   showQuestions.innerHTML = "";
+
+  console.log(endGame);
 }
 
 startBtn.addEventListener("click", startQuiz);
