@@ -16,7 +16,7 @@ let showHighscore = document.querySelector("#high-score");
 
 let timerInterval;
 //just an example of if I have a form and im calling it into the Javascript "var name = document.querySelector("initials")
-let initials = name.value.trim() 
+//let initials = name.value.trim() 
 
 let newScore = {
   score: secondsLeft, 
